@@ -4,9 +4,9 @@ services:
   - docker
 
 before_install:
-  - docker build -f redis/Dockerfile.dev -t vijayrajan23/redserver
-  - docker build -f one/Dockerfile.dev -t vijayrajan23/oneserver
-  - docker build -f gate/Dockerfile.dev -t vijayrajan23/proxyserver
+  - docker build -t vijayrajan23/redserver -f redis/Dockerfile.dev
+  - docker build -t vijayrajan23/oneserver -f one/Dockerfile.dev
+  - docker build -t vijayrajan23/proxyserver -f gate/Dockerfile.dev
 
 script:
   - pass
