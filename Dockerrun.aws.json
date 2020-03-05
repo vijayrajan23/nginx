@@ -1,0 +1,27 @@
+{
+    "AWSEBDockerrunversion": 2,
+    "containerDefinitions": [
+        {
+            "name":"redis",
+            "image":"vijayrajan23/red",
+            "hostname":"redserver"
+        }
+        {
+            "name":"one",
+            "image":"vijayrajan23/one",
+            "hostname":"oneserver"
+        }
+        {
+            "name":"revers",
+            "image":"vijayrajan23/revers",
+            "hostname":"revers",
+            "essentail": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "cona"
+                }
+            ]
+        }
+    ]
+}
