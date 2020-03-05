@@ -1,0 +1,36 @@
+version: '3.2'
+networks: 
+  ng:
+services: 
+  redis:
+    container_name: redserver
+    build: redis/.
+    ports:
+      - "80"
+    volumes:
+      - redis
+    networks: 
+      - ng
+  one:
+    container_name: oneserver
+    build: one/.
+    ports: 
+      - "80"
+    volumes:
+      - one
+    networks: 
+      - ng
+  revers:
+    container_name: revers
+    build: gate/.
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - revers
+    networks: 
+      - ng
+volumes: 
+  redis:
+  one:  
+  revers:
