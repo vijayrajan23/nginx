@@ -1,6 +1,6 @@
 FROM nginx
 RUN mkdir -p /var/www/redis/html
-COPY ./web/redis/* /var/www/redis/html
+COPY ./web/redis/index.html /var/www/redis/html/
 RUN unlink /etc/nginx/conf.d/default.conf
 COPY ./conf/redis.conf /etc/nginx/conf.d/
 EXPOSE 80
