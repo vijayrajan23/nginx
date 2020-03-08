@@ -4,9 +4,9 @@ services:
   - docker
 
 before_install:
-  - docker build -f redis/Dockerfile.dev
-  - docker build -f one/Dockerfile.dev
-  - docker build -f gate/Dockerfile.dev
+  - docker build -f redis/Dockerfile.dev .
+  - docker build -f one/Dockerfile.dev .
+  - docker build -f gate/Dockerfile.dev .
 
 script:
   - pass
