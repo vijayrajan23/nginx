@@ -9,4 +9,4 @@ before_install:
   - docker build -f ./gate/Dockerfile.dev .
 
 script:
-  - docker-compose --version
+  - docker-compose build
