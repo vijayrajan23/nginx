@@ -4,9 +4,12 @@ services:
   - docker
 
 before_install:
-  - docker build -f ./redis/Dockerfile.dev .
-  - docker build -f ./one/Dockerfile.dev .
-  - docker build -f ./gate/Dockerfile.dev .
+  - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
+  - docker build -f ./redis/Dockerfile.dev . -t vijayrajan23/redis:vr1
+  - docker build -f ./one/Dockerfile.dev . -t vijayrajan23/one:vr1
+  - docker build -f ./gate/Dockerfile.dev . -t vijayrajan23/revers:vr1
 
 script:
-  - pass
+  - docker push vijayrajan23/redis:vr1
+  - docker push vijayrajan23/one:vr1
+  - docker push vijayrajan23/revers:vr1

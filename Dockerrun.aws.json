@@ -12,7 +12,7 @@
             "hostname":"oneserver"
         }
         {
-            "name":"revers",
+            "name":"rev",
             "image":"vijayrajan23/revers",
             "hostname":"revers",
             "essentail": true,
