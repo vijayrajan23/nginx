@@ -4,7 +4,7 @@ networks:
 services: 
   redis:
     container_name: redserver
-    image: vijayrajan23/redis
+    build: redis/.
     ports:
       - "80"
     volumes:
@@ -13,7 +13,7 @@ services:
       - ng
   one:
     container_name: oneserver
-    image: vijayrajan23/one
+    build: one/.
     ports: 
       - "80"
     volumes:
@@ -22,7 +22,7 @@ services:
       - ng
   revers:
     container_name: revers
-    image: vijayrajan23/gate
+    build: gate/.
     ports: 
       - "80:80"
       - "443:443"
